@@ -1,0 +1,24 @@
+{
+  "name": "services.product",
+  "version": "1.0.0",
+  "description": "sevices product and inisialisai users",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agus054/services-product.git"
+  },
+  "author": "agus setiabudi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agus054/services-product/issues"
+  },
+  "homepage": "https://github.com/agus054/services-product#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "js-base64": "^3.7.2",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
