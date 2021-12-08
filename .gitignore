@@ -3,3 +3,5 @@ node_modules/
 
 # hide file .env
 .env
+# hide request http
+.http
