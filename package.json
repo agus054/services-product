@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/agus054/services-product#readme",
   "dependencies": {
+    "@hapi/joi": "^17.1.1",
     "axios": "^0.24.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",

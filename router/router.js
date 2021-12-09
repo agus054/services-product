@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const createError = require("http-errors");
 
+const { schemaProduct } = require("../halpers/validateSchemaProduct");
+const db = require("../config/db");
+
 router.get("/product-v1", async (req, res, next) => {
     try {
         //get Product     
@@ -12,8 +15,11 @@ router.get("/product-v1", async (req, res, next) => {
 
 router.post("/input-product-v1", async (req, res, next) => {
     try {
-        //input Product
+        const product = await schemaProduct.validateAsync(req.body);
+        const newProduct = await db.insertProductDb(product.id, product.product_name, product.price, product.quantity, product.category);
+        console.log(newProduct);
     } catch (error) {
+        if (error.isJoi === true) error.status = 422;
         next(error);
     }
 });
