@@ -27,5 +27,26 @@ module.exports = {
                 resolve(result)
             });
         });
+    },
+    updateProductDb: (column, value, id) => {
+        return new Promise((resolve, reject) => {
+            db.query(`UPDATE products SET ${column} = '${value}' WHERE id = '${id}'`, (err, result) => {
+                err ? reject(err.sqlMessage) : resolve(result);
+            });
+        })
+    },
+    getProductDbById: (productId) => {
+        return new Promise((resolve, reject) => {
+            db.query(`SELECT * FROM products WHERE id = '${productId}'`, (err, result) => {
+                err ? reject(err.sqlMessage) : resolve(result);
+            })
+        })
+    },
+    deleteProductDb: (productId) => {
+        return new Promise((resolve, reject) => {
+            db.query(`DELETE FROM products WHERE id = '${productId}'`, (err, result) => {
+                err ? reject(err.sqlMessage) : resolve(result);
+            })
+        })
     }
 }
